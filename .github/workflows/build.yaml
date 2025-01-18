@@ -8,10 +8,6 @@ on:
       - main
     paths:
       - 'docker-images/*'
-
-env:
-  REGISTRY: ghcr.io
-  REPO_NAME: ${{ github.repository }}
   
 jobs:
   push_to_registries:
@@ -38,8 +34,8 @@ jobs:
         shell: bash
         run: |
           docker pull nginx:1.26
-          docker tag nginx:1.26 ${REGISTRY}/${REPO_NAME}/nginx:1.26
-          docker push ${REGISTRY}/${REPO_NAME}/nginx:1.26
+          docker tag nginx:1.26 ghcr.io/${GITHUB_REPOSITORY_OWNER}/nginx:1.26
+          docker push ghcr.io/${GITHUB_REPOSITORY_OWNER}/nginx:1.26
 
 
 
