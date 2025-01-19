@@ -33,9 +33,9 @@ jobs:
       - name: pull and push images
         shell: bash
         run: |
-          docker pull nginx:1.26
-          docker tag nginx:1.26 ghcr.io/${GITHUB_REPOSITORY_OWNER}/nginx:1.26
-          docker push ghcr.io/${GITHUB_REPOSITORY_OWNER}/nginx:1.26
+          docker pull python:3.12.8
+          docker tag python:3.12.8 ghcr.io/${GITHUB_REPOSITORY_OWNER}/python:3.12.8
+          docker push ghcr.io/${GITHUB_REPOSITORY_OWNER}/python:3.12.8
 
 
 
