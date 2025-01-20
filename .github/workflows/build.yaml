@@ -33,10 +33,28 @@ jobs:
       - name: pull and push images
         shell: bash
         run: |
-          docker pull python:3.12.8
-          docker tag python:3.12.8 ghcr.io/${GITHUB_REPOSITORY_OWNER}/python:3.12.8
-          docker push ghcr.io/${GITHUB_REPOSITORY_OWNER}/python:3.12.8
+          dirs="hub"
+          pushed_dir="pushed"
+          
+          for dir in $dirs; do
+              for _file in $(ls $dir); do
+                  image_file="$dir/$_file"
+                  pushed_file="$pushed_dir/$_file"
+                  image_tag=$(head -n 1 $image_file | tr -d '[:space:]')
+                  pushed_tag=""
 
-
-
-      
+                  if [[ -f "$pushed_file" ]]; then
+                      pushed_tag=$(head -n 1 $pushed_file | tr -d '[:space:]')
+                  fi
+                  if [[ "$image_tag" != "$pushed_tag" ]]; then
+                      echo 'not pushed yet, now pushing.'
+                      docker pull $image_tag
+                      docker tag $image_tag ghcr.io/${GITHUB_REPOSITORY_OWNER}/$image_tag
+                      docker push ghcr.io/${GITHUB_REPOSITORY_OWNER}/$image_tag
+                      echo "$image_tag" > $pushed_file
+                  else
+                      echo "$image_tag pushed."
+                  fi
+              done
+          done
+     
