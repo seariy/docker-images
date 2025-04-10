@@ -35,6 +35,8 @@ jobs:
         run: |
           dirs="hub"
           pushed_dir="pushed"
+          readme="README.md"
+          cat _README.md > $readme
           
           for dir in $dirs; do
               for _file in $(ls $dir); do
@@ -55,6 +57,13 @@ jobs:
                   else
                       echo "$image_tag pushed."
                   fi
+
+                  title=$(echo $image_tag|awk -F ':' '{print $1}')
+                  echo "- [$title](https://github.com/${GITHUB_REPOSITORY}/pkgs/container/${image_tag//\//%2F})" >> $readme
+                  echo "```sh" >> $readme
+                  echo "docker pull ghcr.io/${GITHUB_REPOSITORY_OWNER}/$image_tag" >> $readme
+                  echo "```" >> $readme
+                  echo "" >> $readme
               done
           done
 
