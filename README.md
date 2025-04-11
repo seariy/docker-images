@@ -5,48 +5,48 @@
 - 如果想要其他镜像请提 issue，或者直接 fork 本 repo，启用 actions，然后在 hub 目录新建文件，内容为镜像的名称及 tag，请参考 [hub/nginx](https://github.com/feng2208/docker-images/blob/main/hub/nginx)。
 
 镜像列表：
-- [mariadb](https://github.com/feng2208/docker-images/pkgs/container/mariadb)
-```sh
-docker pull ghcr.io/feng2208/mariadb:10.11.11
+- mariadb
+```nginx
+docker pull mariadb:10.11.11
 ```
 
-- [mattermost/mattermost-team-edition](https://github.com/feng2208/docker-images/pkgs/container/mattermost%2Fmattermost-team-edition)
-```sh
-docker pull ghcr.io/feng2208/mattermost/mattermost-team-edition:10.6.1
+- mattermost/mattermost-team-edition
+```nginx
+docker pull mattermost/mattermost-team-edition:10.6.1
 ```
 
-- [mysql](https://github.com/feng2208/docker-images/pkgs/container/mysql)
-```sh
-docker pull ghcr.io/feng2208/mysql:8.4.3
+- mysql
+```nginx
+docker pull mysql:8.4.3
 ```
 
-- [nextcloud](https://github.com/feng2208/docker-images/pkgs/container/nextcloud)
-```sh
-docker pull ghcr.io/feng2208/nextcloud:31.0.2
+- nextcloud
+```nginx
+docker pull nextcloud:31.0.2
 ```
 
-- [nginx](https://github.com/feng2208/docker-images/pkgs/container/nginx)
-```sh
-docker pull ghcr.io/feng2208/nginx:1.26.2
+- nginx
+```nginx
+docker pull nginx:1.26.2
 ```
 
-- [postgres](https://github.com/feng2208/docker-images/pkgs/container/postgres)
-```sh
-docker pull ghcr.io/feng2208/postgres:17.4
+- postgres
+```nginx
+docker pull postgres:17.4
 ```
 
-- [python](https://github.com/feng2208/docker-images/pkgs/container/python)
-```sh
-docker pull ghcr.io/feng2208/python:3.12.8
+- python
+```nginx
+docker pull python:3.12.8
 ```
 
-- [redis](https://github.com/feng2208/docker-images/pkgs/container/redis)
-```sh
-docker pull ghcr.io/feng2208/redis:7.4.2
+- redis
+```nginx
+docker pull redis:7.4.2
 ```
 
-- [ubuntu](https://github.com/feng2208/docker-images/pkgs/container/ubuntu)
-```sh
-docker pull ghcr.io/feng2208/ubuntu:24.04
+- ubuntu
+```nginx
+docker pull ubuntu:24.04
 ```
 
