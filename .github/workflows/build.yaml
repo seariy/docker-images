@@ -59,7 +59,7 @@ jobs:
                       echo "$image pushed."
                   fi
 
-                  $image_name=$(echo $image|awk -F ':' '{print $1}')
+                  image_name=$(echo $image|awk -F ':' '{print $1}')
                   echo "- $image_name" >> $readme
                   echo '```nginx' >> $readme
                   echo "docker pull $(cat $pushed_file)" >> $readme
