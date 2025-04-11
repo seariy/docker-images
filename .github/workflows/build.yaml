@@ -58,10 +58,10 @@ jobs:
                   else
                       echo "$image pushed."
                   fi
-
+                  echo "ghcr.io/${GITHUB_REPOSITORY_OWNER}/$image" > $pushed_file
                   image_name=$(echo $image|awk -F ':' '{print $1}')
                   echo "- $image_name" >> $readme
-                  echo '```nginx' >> $readme
+                  echo '```ruby' >> $readme
                   echo "docker pull $(cat $pushed_file)" >> $readme
                   echo '```' >> $readme
                   echo "" >> $readme
