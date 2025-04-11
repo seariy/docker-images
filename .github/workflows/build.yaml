@@ -58,7 +58,7 @@ jobs:
                   else
                       echo "$image pushed."
                   fi
-                  echo "ghcr.io/${GITHUB_REPOSITORY_OWNER}/$image" > $pushed_file
+                  
                   image_name=$(echo $image|awk -F ':' '{print $1}')
                   echo "- $image_name" >> $readme
                   echo '```ruby' >> $readme
