@@ -30,6 +30,11 @@ docker pull ghcr.io/feng2208/nextcloud:31.0.2
 docker pull ghcr.io/feng2208/nginx:1.26.2
 ```
 
+- php
+```ruby
+docker pull ghcr.io/feng2208/php:8.4.5-fpm
+```
+
 - postgres
 ```ruby
 docker pull ghcr.io/feng2208/postgres:17.4
