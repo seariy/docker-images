@@ -18,7 +18,8 @@ ghcr.io/feng2208/mattermost/mattermost-team-edition:10.6.1
 
 - mysql
 ```ruby
-ghcr.io/feng2208/mysql:8.4.3
+docker pull ghcr.io/feng2208/mysql:8.4.3
+docker pull registry.gitlab.com/feng2208/a/mysql:8.4.3
 ```
 
 - nextcloud
