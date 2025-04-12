@@ -44,6 +44,7 @@ jobs:
         run: |
           if [[ ${{ steps.login_to_gitlab.outcome }} == "success" ]]; then 
             echo "PUSH_TO_GITLAB=yes" >> "$GITHUB_OUTPUT"
+          fi
           
       - name: pull and push images
         shell: bash
