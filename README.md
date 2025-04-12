@@ -29,7 +29,8 @@ ghcr.io/feng2208/nextcloud:31.0.2
 
 - nginx
 ```ruby
-ghcr.io/feng2208/nginx:1.26.2
+docker pull ghcr.io/feng2208/nginx:1.26.3
+docker pull registry.gitlab.com/feng2208/a/nginx:1.26.3
 ```
 
 - php
