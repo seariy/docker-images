@@ -42,7 +42,7 @@ jobs:
       - name: check gitlab login
         shell: bash
         if: ${{ steps.login_to_gitlab.outcome == 'success' }}
-        run: echo "PUSH_TO_GITLAB=yes" >> "$GITHUB_OUTPUT"
+        run: echo "PUSH_TO_GITLAB=yes" >> "$GITHUB_ENV"
           
       - name: pull and push images
         shell: bash
@@ -51,7 +51,7 @@ jobs:
           pushed_dir="pushed"
           readme="README.md"
           cat _README.md > $readme
-          echo "push to gitlab: ${PUSH_TO_GITLAB}"
+          echo "push to gitlab: $PUSH_TO_GITLAB"
           for dir in $dirs; do
               for _file in $(ls $dir); do
                   image_file="$dir/$_file"
