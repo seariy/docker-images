@@ -42,7 +42,11 @@ jobs:
       - name: check gitlab login
         shell: bash
         if: ${{ steps.login_to_gitlab.outcome == 'success' }}
-        run: echo "PUSH_TO_GITLAB=yes" >> "$GITHUB_ENV"
+        env:
+          GITLAB_REPO: ${{ vars.GITLAB_REPO }}
+        run: |
+          echo "PUSH_TO_GITLAB=yes" >> "$GITHUB_ENV"
+          echo "GITLAB_REPO=$GITLAB_REPO" >> "$GITHUB_ENV"
           
       - name: pull and push images
         shell: bash
@@ -65,10 +69,18 @@ jobs:
                   fi
                   if [[ "$image_tag" != "$pushed_tag" ]]; then
                       echo 'not pushed yet, now pushing.'
+                      github_image="ghcr.io/${GITHUB_REPOSITORY_OWNER}/$image"
                       docker pull $image
-                      docker tag $image ghcr.io/${GITHUB_REPOSITORY_OWNER}/$image
-                      docker push ghcr.io/${GITHUB_REPOSITORY_OWNER}/$image
-                      echo "ghcr.io/${GITHUB_REPOSITORY_OWNER}/$image" > $pushed_file
+                      docker tag $image $github_image
+                      docker push $github_image
+                      echo "docker pull $github_image" > $pushed_file
+
+                      if [[ "$PUSH_TO_GITLAB" == "yes" ]]; then
+                        gitlab_image="registry.gitlab.com/${GITLAB_REPO}/$image"
+                        docker tag $image $gitlab_image
+                        docker push $gitlab_image
+                        echo "docker pull $gitlab_image" >> $pushed_file
+                      fi
                   else
                       echo "$image pushed."
                   fi
@@ -76,7 +88,7 @@ jobs:
                   image_name=$(echo $image|awk -F ':' '{print $1}')
                   echo "- $image_name" >> $readme
                   echo '```ruby' >> $readme
-                  echo "docker pull $(cat $pushed_file)" >> $readme
+                  echo "$(cat $pushed_file)" >> $readme
                   echo '```' >> $readme
                   echo "" >> $readme
               done
