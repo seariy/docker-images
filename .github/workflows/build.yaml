@@ -36,6 +36,7 @@ jobs:
           registry: registry.gitlab.com
           username: ${{ vars.GITLAB_USERNAME }}
           password: ${{ secrets.GITLAB_PASSWORD }}
+        continue-on-error: true
           
       - name: pull and push images
         shell: bash
