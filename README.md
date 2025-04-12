@@ -7,51 +7,51 @@
 镜像列表：
 - mariadb
 ```ruby
-docker pull ghcr.io/feng2208/mariadb:10.11.11
+ghcr.io/feng2208/mariadb:10.11.11
 ```
 
 - mattermost/mattermost-team-edition
 ```ruby
-docker pull ghcr.io/feng2208/mattermost/mattermost-team-edition:10.6.1
+ghcr.io/feng2208/mattermost/mattermost-team-edition:10.6.1
 ```
 
 - mysql
 ```ruby
-docker pull ghcr.io/feng2208/mysql:8.4.3
+ghcr.io/feng2208/mysql:8.4.3
 ```
 
 - nextcloud
 ```ruby
-docker pull ghcr.io/feng2208/nextcloud:31.0.2
+ghcr.io/feng2208/nextcloud:31.0.2
 ```
 
 - nginx
 ```ruby
-docker pull ghcr.io/feng2208/nginx:1.26.2
+ghcr.io/feng2208/nginx:1.26.2
 ```
 
 - php
 ```ruby
-docker pull ghcr.io/feng2208/php:8.4.5-fpm
+ghcr.io/feng2208/php:8.4.5-fpm
 ```
 
 - postgres
 ```ruby
-docker pull ghcr.io/feng2208/postgres:17.4
+ghcr.io/feng2208/postgres:17.4
 ```
 
 - python
 ```ruby
-docker pull ghcr.io/feng2208/python:3.12.8
+ghcr.io/feng2208/python:3.12.8
 ```
 
 - redis
 ```ruby
-docker pull ghcr.io/feng2208/redis:7.4.2
+ghcr.io/feng2208/redis:7.4.2
 ```
 
 - ubuntu
 ```ruby
-docker pull ghcr.io/feng2208/ubuntu:24.04
+ghcr.io/feng2208/ubuntu:24.04
 ```
 
