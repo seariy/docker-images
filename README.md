@@ -50,6 +50,7 @@ ghcr.io/feng2208/redis:7.4.2
 
 - ubuntu
 ```ruby
-ghcr.io/feng2208/ubuntu:24.04
+docker pull ghcr.io/feng2208/ubuntu:24.04
+docker pull registry.gitlab.com/feng2208/a/ubuntu:24.04
 ```
 
