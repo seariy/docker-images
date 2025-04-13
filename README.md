@@ -11,11 +11,6 @@ docker pull ghcr.io/feng2208/mariadb:11.4.5
 docker pull registry.gitlab.com/feng2208/a/mariadb:11.4.5
 ```
 
-- mattermost/mattermost-team-edition
-```ruby
-ghcr.io/feng2208/mattermost/mattermost-team-edition:10.6.1
-```
-
 - mysql
 ```ruby
 docker pull ghcr.io/feng2208/mysql:8.4.3
